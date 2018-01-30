@@ -1,0 +1,745 @@
+@import 'variables';
+@import 'font';
+@import "markup-mixins";
+@import "base/base-reset";
+@import "vendor/slick";
+@import "vendor/slick-theme";
+/* NAVBAR */
+.header {
+  width: 100%;
+  background-color: $base-theme-color;
+  .navbar{
+    margin: 0 auto;
+    height: 120px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: $base-theme-color;
+    @include md-desktop-only{
+      padding: 0;
+    }
+    @include md-phone{
+      height: 80px;
+    }
+  }
+  .logo-wrapper{
+    margin-bottom: 30px;
+    @include md-desktop-only{
+      margin: 0;
+      padding-left: 30px;
+    }
+    @include md-phone{
+      padding-left: 15px;
+      max-width: 180px;
+    }
+  }
+  .nav-wrapper {
+    background-color: $base-theme-color;
+    z-index: 99;
+    .menu-text{
+      color: #c77e00;
+      display: inherit;
+    }
+    .hamburger {
+      padding: 10px 15px 0;
+      display: none;
+      cursor: pointer;
+      transition-property: opacity, filter;
+      transition-duration: 0.15s;
+      transition-timing-function: linear;
+      font: inherit;
+      color: inherit;
+      text-transform: none;
+      background-color: transparent;
+      border: 0;
+      margin: 0;
+      overflow: visible;
+      @include md-desktop-only{
+        display: inline-block;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        opacity: 0.9;
+      }
+      .hamburger-box {
+        width: 50px;
+        height: 30px;
+        display: inline-block;
+        position: relative;
+        top: 5px;
+
+        .hamburger-inner {
+          display: block;
+          top: 50%;
+          margin-top: -2px;
+          width: 50px;
+          height: 6px;
+          background-color: #c77e00;
+          border-radius: 0;
+          position: absolute;
+          transition-property: transform;
+          transition-duration: 0.15s;
+          transition-timing-function: ease;
+          &:before{
+            top: -12px;
+            content: "";
+            display: block;
+            width: 50px;
+            height: 6px;
+            background-color: #c77e00;
+            border-radius: 0;
+            position: absolute;
+            transition-property: transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease;
+          }
+          &:after {
+            content: "";
+            bottom: -12px;
+            display: block;
+            width: 50px;
+            height: 6px;
+            background-color: #c77e00;
+            border-radius: 0;
+            position: absolute;
+            transition-property: transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease;
+          }
+        }
+      }
+      &.hamburger--collapse {
+        perspective: 80px;
+        .hamburger-inner {
+          transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+          &:before{
+            transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+          }
+          &:after{
+            transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+          }
+        }
+        &.is-active{
+          .hamburger-inner{
+            background-color: transparent;
+            transform: rotateY(180deg);
+            &:before{
+              transform: translate3d(0, 10px, 0) rotate(45deg);
+            }
+            &:after{
+              transform: translate3d(0, -10px, 0) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+    .nav-menu {
+      @include md-desktop-only{
+        padding-top: 20px;
+        background-color: $base-theme-color;
+      }
+      > li {
+        display: inline-block;
+        background-color: $base-theme-color;
+        @include md-desktop-only{
+          border-bottom: 1px solid $base-theme-color-light;
+        }
+        > a {
+          text-decoration: none;
+          display: block;
+          color: #ffffff;
+          font-size: 17px;
+          padding: 10px 20px;
+          font-weight: 400;
+          text-align: center;
+          &:hover{
+            color: #6c6c6c;
+          }
+          @include desktop-only{
+            font-size: 16px;
+            padding: 20px 12px 0;
+          }
+          @include tablet-only{
+            font-size: 17px;
+            padding: 15px 0;
+          }
+        }
+        &.bookaroom{
+          a {
+            padding: 10px 20px;
+            background-color: $base-theme-color-light;
+            &:hover {
+              background-color:lighten($base-theme-color-light, 10%);
+              color: #ffffff;
+            }
+            @include desktop-only {
+              display: block;
+              margin-top: 10px;
+            }
+            @include tablet-only {
+              display: block;
+              padding: 10px 0;
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .Bookaroom-btn{
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    z-index: 100;
+    @include desktop-only{
+      display: none;
+    }
+    a{
+      background-color: $base-theme-color-light;
+      padding: 20px 30px 20px 20px;
+      display: block;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 19px;
+      &:hover{
+        background-color: $base-theme-color;
+      }
+      @include desktop-only{
+        padding: 15px 12px 15px 10px;
+        display: block;
+        text-decoration: none;
+        color: #ffffff;
+        border: none;
+        font-size: 16px;
+      }
+    }
+  }
+  }
+#main {
+  .banner-wrapper {
+    position: relative;
+    .heading-wrapper {
+      position: relative;
+      @include phone-screens {
+        position: static;
+      }
+      .heading-block {
+        position: absolute;
+        padding: 15px 30px;
+        z-index: 50;
+        background-color: rgba(12, 67, 99, 0.7);
+        max-width: 100%;
+        margin-top: 6.5rem;
+        left: 0;
+        right: 0;
+        @include tablet-only {
+          padding: 15px 20px;
+          margin-top: 4.5rem;
+        }
+        @include md-phone {
+          font-size: 19px;
+          padding: 10px 15px;
+          margin-top: 3rem;
+        }
+        @include phone {
+          font-size: 19px;
+          padding: 10px 15px;
+          margin-top: 2rem;
+        }
+        h1 {
+          font-size: 55px;
+          color: #ffffff;
+          font-weight: 400;
+          text-align: center;
+          opacity: 1;
+          display: block;
+          @include desktop-only {
+            font-size: 45px;
+          }
+          @include tablet-only {
+            font-size: $base-heading-font-size-m;
+            font-weight: 900;
+          }
+          @include phone-screens {
+            font-size: 22px;
+          }
+          @include md-phone {
+            font-size: 19px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .banner-img {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+    .content-wrapper {
+      position: absolute;
+      background-color: rgba(199, 126, 0, 0.6);
+      min-height: 210px;
+      width: 100%;
+      bottom: 0;
+      @include tablet-only {
+        min-height: 240px;
+      }
+      @include phone-screens {
+        position: relative;
+      }
+      .buttons-wrapper {
+        z-index: 50;
+        text-align: center;
+        text-decoration: none;
+        margin: 0 20px -20px;
+        position: relative;
+        top: -20px;
+        .btn-travelers, .btn-hoteliers {
+          padding: 10px 50px;
+          border: none;
+          border-radius: 0;
+          display: inline-block;
+          color: #ffffff;
+          text-decoration: none;
+          margin: 0 20px;
+          @include phone-screens {
+            padding: 10px 40px;
+            margin: 0 20px;
+          }
+          @include phone {
+            padding: 10px 30px;
+            margin: 0 8px;
+          }
+          &.btn-hoteliers {
+            background-color: $base-theme-color;
+            &:hover {
+              background-color: $base-theme-color-light;
+            }
+          }
+          &.btn-travelers {
+            background-color: $base-theme-color-light;
+            &:hover {
+              background-color: $base-theme-color;
+            }
+          }
+        }
+      }
+      .text-block {
+        padding: 0 30px;
+        h3 {
+          font-size: 32px;
+          @include phone-screens {
+            font-size: 20px;
+          }
+        }
+        p {
+          font-size: 16px;
+          @include phone-screens {
+            font-size: 14px;
+          }
+        }
+        @include phone-screens {
+          padding: 0 20px 20px;
+        }
+      }
+    }
+  }
+  #who-use-fedrooms {
+    h2 {
+      color: $base-theme-color-light;
+      font-size: 42px;
+    }
+    @include phone-screens {
+      font-size: 28px;
+    }
+    p {
+      color: #005576;
+      font-size: 18px;
+      font-weight: 700;
+      @include phone-screens {
+        font-size: 16px;
+      }
+    }
+    img {
+      max-width: 70px;
+    }
+    .grey-text {
+      color: #707c7c;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  #values-choices {
+    background: url("../images/amenities-bg.jpg") no-repeat;
+    background-size: cover;
+    h2 {
+      color: $base-theme-color-light;
+      font-size: 42px;
+      font-weight: 700;
+      @include phone-screens {
+        font-size: 28px;
+      }
+    }
+    img {
+      max-width: 70px;
+      height: 60px;
+    }
+    .headings {
+      font-size: 30px;
+      font-weight: 700;
+      @include phone-screens {
+        font-size: 28px;
+      }
+    }
+    .sub-headings {
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      line-height: 1.3;
+      font-family: Arial;
+      @include phone-screens {
+        font-size: 16px;
+        padding: 0 20px;
+      }
+      &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 1px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #c77e00;
+        @include phone-screens {
+          display: none;
+        }
+      }
+    }
+    p, li {
+      line-height: 1.4;
+      font-size: 16px;
+      font-family: Arial;
+      @include phone-screens {
+        display: none;
+      }
+    }
+    .Learnmore_btn {
+      a {
+        text-decoration: none;
+        display: block;
+        background-color: $base-secondry-theme-color;
+        color: white;
+        padding: 5px 10px;
+        width: 50%;
+        position: relative;
+        z-index: 6;
+        border: 1px solid #ffffff;
+        &:hover {
+          background-color: darken($base-secondry-theme-color, 7%);
+        }
+        @include tablet-only {
+          width: 70%;
+        }
+        @include phone-screens {
+          width: 80%;
+          font-size: 14px;
+        }
+        &:after {
+          content: "";
+          z-index: 5;
+          position: absolute;
+          height: 1px;
+          background-color: #ffffff;
+          display: block;
+          right: 100%;
+          width: 50%;
+          top: 50%;
+          @include tablet-only {
+            width: 25%;
+          }
+          @include phone-screens {
+            width: 18%;
+          }
+          @include md-phone {
+            width: 10%;
+          }
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          height: 1px;
+          background-color: #ffffff;
+          display: block;
+          left: 100%;
+          top: 50%;
+          width: 50%;
+          z-index: 5;
+          @include tablet-only {
+            width: 25%;
+          }
+          @include phone-screens {
+            width: 18%;
+          }
+          @include md-phone {
+            width: 10%;
+          }
+        }
+      }
+    }
+    .info-text-bottom {
+      font-size: 26px;
+      line-height: 1.3;
+      font-weight: 700;
+      @include phone-screens {
+        font-size: 17px;
+      }
+    }
+  }
+  #Newsletter {
+    margin-top: -70px;
+    .Watch-video-btn {
+      text-decoration: none;
+      background-color: $base-theme-color-light;
+      padding: 10px 30px;
+      width: 30%;
+      display: block;
+      color: #ffffff;
+      &:hover {
+        background-color: lighten($base-theme-color, 20%);
+      }
+      @include tablet-only {
+        width: 50%;
+      }
+      @include phone-screens {
+        width: 65%;
+      }
+      @include phone {
+        width: 80%;
+      }
+    }
+    .info-text {
+      color: lighten($base-theme-color, 12%);
+      font-size: 26px;
+      font-family: Arial;
+      @include phone-screens {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    .newsletter-link {
+      color: lighten($base-secondry-theme-color, 12%);
+      font-size: 26px;
+      font-family: Arial;
+      text-decoration-line: underline;
+      &:hover {
+        color: lighten($base-secondry-theme-color, 20%);
+      }
+      @include phone-screens {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    img {
+      max-width: 70%;
+    }
+  }
+  #three-column-group {
+    .hoteliers-wrapper, .Groups-meetings-wrapper, .Travel-Wrapper {
+      min-height: 500px;
+      @include phone-screens {
+        min-height: 465px;
+      }
+      @include phone {
+        min-height: 440px;
+      }
+      h3 {
+        font-size: 37px;
+        @include phone-screens {
+          font-size: 28px;
+          font-weight: 700;
+        }
+      }
+      p {
+        font-size: 20px;
+        line-height: 1.4;
+        font-family: Arial;
+        @include phone-screens {
+          font-size: 16px;
+        }
+      }
+      .learnmore-btn {
+        font-size: 24px;
+        color: #ffffff;
+        font-family: Arial;
+        text-decoration: underline;
+        &:hover {
+          color: darken(#ffffff, 10%);
+        }
+        @include phone-screens {
+          font-size: 22px;
+        }
+      }
+      &.hoteliers-wrapper {
+        background-color: $base-theme-color;
+      }
+      &.Groups-meetings-wrapper {
+        background-color: $base-secondry-theme-color;
+      }
+      &.Travel-Wrapper {
+        background-color: #707c7c;
+      }
+    }
+  }
+  #news-slider {
+    background-color: #dedede;
+    .static-content-block {
+      @include phone-screens {
+        text-align: center;
+      }
+      h3 {
+        font-size: 36px;
+        font-weight: 600;
+        color: $base-theme-color;
+        br {
+          @include phone-screens {
+            display: none;
+          }
+        }
+      }
+      .sub-headings {
+        color: $base-theme-color;
+        font-size: 22px;
+      }
+      .news-btn {
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: $base-theme-color-light;
+        font-size: 22px;
+        color: #ffffff;
+        &:hover {
+          background-color: darken($base-theme-color-light, 10%);
+        }
+      }
+      p {
+        font-size: 16px;
+        font-family: Arial;
+        &.font-weight-bold {
+          font-size: 18px;
+        }
+      }
+      .sign-up-anchor {
+        font-size: 18px;
+        color: $base-secondry-theme-color;
+        text-decoration: underline;
+        font-family: Arial;
+        @include phone-screens {
+          font-size: 22px;
+        }
+      }
+    }
+    .slider-wrapper {
+      position: relative;
+      .news-date {
+        color: #272724;
+        font-size: 12px;
+        font-family: Arial;
+      }
+      .news-heading {
+        font-size: 22px;
+        font-family: Arial;
+      }
+      .news-info {
+        color: #464749;
+        font-size: 15px;
+        line-height: 1.4;
+        font-family: Arial;
+      }
+      .read-btn {
+        color: $base-secondry-theme-color;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: Arial;
+        text-decoration: none;
+        &:hover {
+          color: darken($base-secondry-theme-color, 10);
+        }
+      }
+      .slick-prev, .slick-next {
+        position: absolute;
+        display: block;
+        cursor: pointer;
+        background: lighten($base-secondry-theme-color, 30%);
+        color: transparent;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        height: 100%;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+        padding: 0;
+        border: none;
+        &:hover {
+          background-color: $base-secondry-theme-color;
+        }
+        &.slick-prev {
+          &:before {
+            background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") no-repeat;
+          }
+        }
+        &.slick-next {
+          &:before {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+          }
+        }
+      }
+    }
+  }
+}
+#footer{
+  background-color:$base-theme-color;
+  .social-icons-wrapper{
+    .facebook, .linkdin, .mail{
+      font-size: 40px;
+      background-color: #ffffff;
+      max-width: 60px;
+      display: block;
+      margin-left: 10px;
+      color: $base-theme-color;
+      @include phone-screens{
+      margin-top: 15px;
+      }
+      @include phone{
+        max-width: 50px;
+        font-size: 25px;
+        margin-left: 5px;
+        margin-top: 10px;
+      }
+      &.facebook{
+        padding-left: 19px;
+        padding-right: 5px;
+        @include phone{
+          padding-left: 10px;
+        }
+      }
+      &.linkdin{
+        padding-left: 10px;
+        padding-right: 10px;
+        @include phone{
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+      &.mail{
+        padding-left: 10px;
+        padding-right: 10px;
+        @include phone{
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}

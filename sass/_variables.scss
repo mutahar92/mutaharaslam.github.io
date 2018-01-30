@@ -1,0 +1,32 @@
+//////////////////////////////
+// Default Base Style
+//////////////////////////////
+
+$base-font-size-p: 17px;
+$base-line-height: 1.2;
+$base-font-family: 'DIN';
+$base-heading-font-size:55px;
+$base-heading-font-size-m:28px;
+$base-theme-color:#0c4363;
+$base-secondry-theme-color:#c77e00;
+$base-theme-color-light:#2e96dc;
+$backup-font: Arial, Helvetica, sans-serif;
+
+
+//////////////////////////////
+// Default Breakpoints
+//////////////////////////////
+
+$breakpoint-xs-phone:350px;
+$breakpoint-phone:480px;
+$breakpoint-md-phone:580px;
+$breakpoint-lg-phone:767px;
+$breakpoint-phone-landscape:668px;
+$breakpoint-Iphone-x-landscape:814px;
+$breakpoint-tablet: 991px;
+$breakpoint-tablet-landscape:1024px;
+$breakpoint-desktop: 992px;
+$breakpoint-large-Screen: 1200px;
+$breakpoint-1400-Screen: 1400px;
+$breakpoint-x-large-Screen: 1550px;
+$breakpoint-xx-large-Screen: 1850px;
