@@ -14,13 +14,13 @@ body{
  }
 .comingsoon{
     position: absolute;
-    top: calc(50% - 70px);
+    top: 50%;
     left: 0;
     right: 0;
     font-size: 60px;
     color: black;
     text-align: center;
-    text-shadow:2px 2px 0 #ffffff,4px 4px 0 #000000;
+    margin: 0 auto 30px;
 }
 .delay-05s {
     animation-delay:0.5s;
@@ -65,36 +65,43 @@ body{
     display: block;
     padding: 5px 10px;
     cursor: pointer;
-    border: 3px dashed black;
+    border: 2px dashed black;
     font-size: 20px;
     color: #000;
     transition: all 1s ease;
-    border-radius: 50px;
+    border-radius: 15px;
     text-align: center;
 }
 .social ul li a:hover{
     border-radius: 0;
-    border: 2px dotted black;
+    border: 1px dashed black;
     font-size: 25px;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: white;
+}
+a:hover, .fa-facebook:hover{
+    color: #21759B;
+}
+a:hover, .fa-instagram:hover{
+    color: #E4405F;
+}
+a:hover, .fa-linkedin:hover{
+    color: #0077B5;
+}
+a:hover, .fa-twitter:hover{
+    color: #55ACEE;
 }
 @media (max-width: 560px){
     .comingsoon{
-        position: absolute;
-        top: 48%;
-        left: 0;
-        right: 0;
         font-size: 35px;
-        color: black;
-        text-align: center;
-        text-shadow:2px 2px 0 #ffffff,4px 4px 0 #000000;
+        margin: 0 auto 20px;
     }
     .social{
         position: absolute;
         left: 0;
         right: 0;
-        top: 72%;
+        top: 70%;
         text-align: center;
     }
 }
