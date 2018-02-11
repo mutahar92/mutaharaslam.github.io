@@ -1,16 +1,6 @@
-#preloader {
-    position:fixed;
-    left:0;
-    top:0;
-    z-index:99999999999;
-    width:100%;
-    height:100%;
-    overflow:visible;
-    background: #fff;
-}
 .comingsoon{
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 0;
     right: 0;
     font-size: 60px;
@@ -68,8 +58,16 @@
 
 
 
-
-
+#preloader {
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:99999999999;
+    width:100%;
+    height:100%;
+    overflow:visible;
+    background: #fff;
+}
 .cssload-loading *{
     -khtml-box-sizing: border-box;
     box-sizing: border-box;
@@ -81,12 +79,10 @@
 
 .cssload-loading {
     position: absolute;
-    left: 50%;
-    margin: -66px 0 0 -105px;
+    left: calc(50% - 82px);
+    top: calc(50% - 65px);
     width: 225px;
     height: 131px;
-    top: 50%;
-    *zoom: 1;
 }
 .cssload-loading:before,
 .cssload-loading:after {
