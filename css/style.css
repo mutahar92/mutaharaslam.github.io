@@ -1,0 +1,100 @@
+
+body{
+	margin:0;
+	padding:0;
+    background:radial-gradient(circle farthest-corner at center center, rgb(255, 255, 255) 19%, rgb(255, 0, 0) 80%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    font-family: cursive;
+ }
+.comingsoon{
+    position: absolute;
+    top: calc(50% - 70px);
+    left: 0;
+    right: 0;
+    font-size: 60px;
+    color: black;
+    text-align: center;
+    text-shadow:2px 2px 0 #ffffff,4px 4px 0 #000000;
+}
+.delay-05s {
+    animation-delay:0.5s;
+    -webkit-animation-delay:0.5s;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+.social{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 77%;
+    text-align: center;
+}
+.social ul{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.social ul li{
+    display: inline-block;
+    padding: 0 5px;
+}
+.social ul li a{
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 3px dashed black;
+    font-size: 20px;
+    color: #000;
+    transition: all 1s ease;
+    border-radius: 50px;
+    text-align: center;
+}
+.social ul li a:hover{
+    border-radius: 0;
+    border: 2px dotted black;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+@media (max-width: 560px){
+    .comingsoon{
+        position: absolute;
+        top: 48%;
+        left: 0;
+        right: 0;
+        font-size: 35px;
+        color: black;
+        text-align: center;
+        text-shadow:2px 2px 0 #ffffff,4px 4px 0 #000000;
+    }
+    .social{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 72%;
+        text-align: center;
+    }
+}
