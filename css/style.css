@@ -1,3 +1,115 @@
+.snow-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  top: -15px;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none; }
+  .snow-container .snow {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    -webkit-transform: translate3d(0%, -100%, 0);
+    transform: translate3d(0%, -100%, 0);
+    -webkit-animation: snow linear infinite;
+    animation: snow linear infinite; }
+    .snow-container .snow.foreground {
+      background-image: url("../images/snow-foreground.png");
+      -webkit-animation-duration: 15s;
+      animation-duration: 15s; }
+      @media (max-width: 992px) {
+        .snow-container .snow.foreground {
+          -webkit-animation-duration: 30s;
+          animation-duration: 30s; } }
+      @media (max-width: 767px) {
+        .snow-container .snow.foreground {
+          -webkit-animation-duration: 40s;
+          animation-duration: 40s; } }
+      .snow-container .snow.foreground.layered {
+        -webkit-animation-delay: 7.5s;
+        animation-delay: 7.5s; }
+        @media (max-width: 992px) {
+          .snow-container .snow.foreground.layered {
+            -webkit-animation-duration: 20s;
+            animation-duration: 20s; } }
+        @media (max-width: 767px) {
+          .snow-container .snow.foreground.layered {
+            -webkit-animation-duration: 30s;
+            animation-duration: 30s; } }
+    .snow-container .snow.middleground {
+      background-image: url("../images/snow-middle.png");
+      -webkit-animation-duration: 25s;
+      animation-duration: 25s; }
+      @media (max-width: 992px) {
+        .snow-container .snow.middleground {
+          -webkit-animation-duration: 40s;
+          animation-duration: 40s; } }
+      @media (max-width: 767px) {
+        .snow-container .snow.middleground {
+          -webkit-animation-duration: 50s;
+          animation-duration: 50s; } }
+      .snow-container .snow.middleground.layered {
+        -webkit-animation-delay: 10s;
+        animation-delay: 10s; }
+        @media (max-width: 992px) {
+          .snow-container .snow.middleground.layered {
+            -webkit-animation-duration: 30s;
+            animation-duration: 30s; } }
+        @media (max-width: 767px) {
+          .snow-container .snow.middleground.layered {
+            -webkit-animation-duration: 40s;
+            animation-duration: 40s; } }
+    .snow-container .snow.background {
+      background-image: url("../images/snow-background.png");
+      -webkit-animation-duration: 35s;
+      animation-duration: 35s; }
+      @media (max-width: 992px) {
+        .snow-container .snow.background {
+          -webkit-animation-duration: 50s;
+          animation-duration: 50s; } }
+      @media (max-width: 767px) {
+        .snow-container .snow.background {
+          -webkit-animation-duration: 60s;
+          animation-duration: 60s; } }
+      .snow-container .snow.background.layered {
+        -webkit-animation-delay: 15s;
+        animation-delay: 15s; }
+        @media (max-width: 992px) {
+          .snow-container .snow.background.layered {
+            -webkit-animation-duration: 40s;
+            animation-duration: 40s; } }
+        @media (max-width: 767px) {
+          .snow-container .snow.background.layered {
+            -webkit-animation-duration: 50s;
+            animation-duration: 50s; } }
+
+@keyframes snow {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  90% {
+    -webkit-transform: translate3d(2%, 90%, 1000px);
+    transform: translate3d(2%, 90%, 1000px); }
+  100% {
+    -webkit-transform: translate3d(0%, 100%, 0);
+    transform: translate3d(0%, 100%, 0); } }
+@-webkit-keyframes snow {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  90% {
+    -webkit-transform: translate3d(2%, 90%, 1000px);
+    transform: translate3d(2%, 90%, 1000px); }
+  100% {
+    -webkit-transform: translate3d(0%, 100%, 0);
+    transform: translate3d(0%, 100%, 0); } }
 body {
   margin: 0;
   padding: 0;
