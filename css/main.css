@@ -1095,11 +1095,11 @@ header .row {
 }
 header .top-bar {
 	display: block;
-	background: #000000;
-	min-width: 220px;
+	/* background: #000000; */
+	min-width: 250px;
 	min-height: 66px;
 	position: absolute;
-	left: 90px;
+	left: 0;
 	top: 0;
 }
 header .logo {
@@ -1119,8 +1119,6 @@ header .logo a {
 	color: transparent;
 	width: 92px;
 	height: 15px;
-	background: url("../images/logo.png") no-repeat center;
-	background-size: 92px 15px;
 }
 
 /**
@@ -1129,8 +1127,8 @@ header .logo a {
  */
 .menu-toggle {
 	float: left;
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
 	margin-left: 20px;
 	margin-top: 13px;
 	display: block;
@@ -1365,12 +1363,8 @@ header .logo a {
 	padding: 0 8px 0 14px;
 	color: rgba(255, 255, 255, 0.3);
 }
-.intro-content .intro-position span:first-child::before {
-	content: "|";
-	text-align: center;
-	display: inline-block;
-	padding: 0 14px 0 8px;
-	color: rgba(255, 255, 255, 0.3);
+.intro-content .intro-position span:last-child::after {
+	content: "";
 }
 .intro-content .button {
 	color: #FFFFFF !important;
