@@ -1,0 +1,31 @@
+{
+  "name": "atom-html",
+  "version": "2.0.0",
+  "author": "Red Pixel Themes",
+  "private": true,
+  "scripts": {
+    "scss": "node-sass styles/scss/main.scss -o styles/css",
+    "css": "postcss styles/css/main.css -o styles/css/main.min.css --verbose",
+    "scss-watch": "node-sass --watch styles/scss/main.scss -o styles/css",
+    "server-reload": "browser-sync start --config './browser-sync-config.js'",
+    "format": "npx prettier ./**/*.html",
+    "build": "npm run css -- --env 'production'",
+    "dev": "concurrently 'npm:scss -- --watch'  'npm:css -- --watch' 'npm:server-reload'"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ],
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "concurrently": "^7.0.0",
+    "cssnano": "^5.0.17",
+    "postcss-cli": "^9.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "node-sass": "^8.0.0",
+    "postcss": "^8.4.7",
+    "prettier": "^2.5.1"
+  }
+}
