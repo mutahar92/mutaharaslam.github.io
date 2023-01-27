@@ -1,7 +1,7 @@
 {
-  "name": "atom-html",
-  "version": "2.0.0",
-  "author": "Red Pixel Themes",
+  "name": "mutahar-aslam",
+  "version": "1.0.0",
+  "author": "Mutahar",
   "private": true,
   "scripts": {
     "scss": "node-sass styles/scss/main.scss -o styles/css",
